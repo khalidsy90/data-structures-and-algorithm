@@ -60,6 +60,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let total=input.reduce((accumlator,currentValue) =>{
+    currentValue.map(item =>{
+      accumlator+=item;
+    });
+    return accumlator;
+  },0);
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +83,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let resultArr=[];
+  for (let i = 0; i < input.length; i++) {
+    let filtedArr=[];
+    for (let x = 0; x < input[i].length; x++) {
+      if (Number.isInteger(input[i][x]) && input[i][x] %5 === 0 ){
+        filtedArr.push(Math.pow(2,input[i][x]));
+      }
+    }
+    resultArr.push(filtedArr);
+  }
+  return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,6 +160,15 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  let newdata=data.filter(item => {
+    return item.gender === 'female' || item.gender === 'male';
+  })
+    .reduce((accumlator,currentValue,idx) =>{
+      return idx === 0 ? accumlator.concat(currentValue.name+' and ')
+        :idx === 1 ? accumlator.concat(currentValue.name)
+          :accumlator.concat(' and '+currentValue.name);
+    },'');
+  return newdata;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,6 +179,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  let newdata=data.map(item => {
+    return item.name;
+  }).sort((a,b) =>{
+    return b.length - a.length;
+  });
+  return newdata[newdata.length-1];
+
 };
 
 /* ------------------------------------------------------------------------------------------------
