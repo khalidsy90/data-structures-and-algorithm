@@ -1,4 +1,4 @@
-[Pull Request](https://github.com/khalidsy90/data-structures-and-algorithm/pulls/14)
+[Pull Request](https://github.com/khalidsy90/data-structures-and-algorithm/pull/14)
 
 Challenge
 
