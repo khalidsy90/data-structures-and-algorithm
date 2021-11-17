@@ -1,0 +1,15 @@
+{
+  "name": "stack-queue-animal-shelter",
+  "version": "1.0.0",
+  "description": "# Challenge Summary   ## Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.",
+  "main": "stack-queue-animal-shelter.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.3.1"
+  }
+}
